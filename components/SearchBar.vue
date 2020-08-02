@@ -27,12 +27,6 @@ export default {
                 {
                     src:'https://use.fontawesome.com/releases/v5.3.1/js/all.js'
                 }
-            ],
-            link: [
-                {
-                    rel: 'stylesheet',
-                    href: 'https://fonts.googleapis.com/css2?family=Nunito&display=swap'
-                }
             ]
         }
     },

@@ -24,9 +24,9 @@
                 <nuxt-link :to="'/'">
                     <li class="cool-link has-text-white is-size-5">Inicio</li>
                 </nuxt-link>
-                <router-link :to="{ name: ''}">
+                <nuxt-link :to="'/catalogo'">
                     <li class="cool-link has-text-white is-size-5">Catálogo</li>
-                </router-link>
+                </nuxt-link>
                 <router-link :to="{ name: ''}">
                     <li class="cool-link has-text-white is-size-5">Contacto</li>
                 </router-link>
@@ -49,12 +49,6 @@
         },
         head() {
             return{
-                link: [
-                    {
-                        rel: 'stylesheet',
-                        href: 'https://fonts.googleapis.com/css2?family=Nunito&display=swap'
-                    }
-                ]
             }
         }
     }
@@ -70,7 +64,7 @@ ul {
     margin-right: 42px;
 }
 .navbar-item{
-    padding: 36px 0;
+    padding: 28px 0;
 }
 li::after{
     content:'';
@@ -85,6 +79,7 @@ li:hover:after{
     width: 100%;
     transition: width .3s;
 }
+
 /* mobile */
 @media screen and (max-width: 769px) {
     .navbar-item{

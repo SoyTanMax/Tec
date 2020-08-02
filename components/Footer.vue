@@ -16,6 +16,7 @@ export default {
     background: #06325E;
     padding-right: 96px;
     padding-left: 96px;
+    font-family: 'Nunito', sans-serif;;
 }
 @media screen and (max-width: 769px) {
     .section{

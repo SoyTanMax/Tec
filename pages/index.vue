@@ -16,13 +16,27 @@
     </div>
     <div class="section is-small catalogo">
       <div class="columns is-paddingless">
-        <div class="column is-2 is-mobile">
+        <div class="column is-2">
           <p class="is-left is-size-4">Filtros</p>
           <Filters/>
         </div>
         <div class="column">
           <p class="has-text-centered is-size-3">Catálogo de proyectos</p>
-          <Catalog/>
+          <div class="catalogo-container" id="proyectos">
+            <Catalog
+            v-for="proyecto in proyectos.slice(0, 9)" :key="proyecto.id"
+            :titulo="proyecto.titulo"
+            :id="proyecto.id"
+            :descripcion="proyecto.descripcion"
+            :categorias="proyecto.categorias"
+            :horario="proyecto.horario"
+            :horas="proyecto.horas"
+            :lugar="proyecto.lugar"
+            :imagen="proyecto.imagen"/>
+          </div>
+          <nuxt-link :to="'/catalogo'">
+            <p class="has-text-centered is-size-5">Ver más</p>
+          </nuxt-link>
         </div>
       </div>
     </div>
@@ -47,18 +61,42 @@ export default {
   },
   head() {
     return{
-      link: [
-        {
-          rel: 'stylesheet',
-          href: 'https://fonts.googleapis.com/css2?family=Nunito&display=swap'
-        }
-      ]
+      
     }
+  },
+  asyncData(context) {
+      return context.app.$storyapi.get('cdn/stories', {
+          version: 'draft',
+          starts_with:'catalogo/'
+      }).then(res => {
+          console.log(res)
+          return {
+            proyectos : res.data.stories.map( bp => {
+            return{
+              id: bp.slug,
+              titulo: bp.content.titulo,
+              descripcion: bp.content.descripcion,
+              categorias: bp.content.categorias,
+              horario: bp.content.horario,
+              horas: bp.content.horas,
+              lugar: bp.content.lugar,
+              imagen: bp.content.image
+            }
+          })
+        }
+      })
   }
 }
 </script>
 
 <style scoped>
+/* helpers */
+.center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* desktop */
 .hero{
   position: relative;
   padding-right: 96px;
@@ -78,6 +116,13 @@ export default {
   justify-content: center;
   align-items: center;
 
+}
+.catalogo-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 24px;
+    padding: 24px;
+    font-family: 'Nunito', sans-serif;
 }
 .catalogo{
   background: #edf2f7;
