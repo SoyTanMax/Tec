@@ -2,9 +2,9 @@
     <nav class="navbar is-transparent">
         <div class="navbar-brand">
             <div class="navbar-item">
-                <nuxt-link to='/'>
+                <nuxt-child :to="'/'">
                     <div class="has-text-white has-text-weight-bold is-size-4">Proyectos Tec</div>
-                </nuxt-link>
+                </nuxt-child>
             </div>
         <!--
     Using the v-on: directive to listen for the click event and toggle the data property showNav. Also, using the v-bind: directive to reactively update the class attribute 'is-active' based on the showNav property.
@@ -21,18 +21,18 @@
       <div class="navbar-menu" :class="{ 'is-active': showNav }">
         <div class="navbar-end">
             <ul class="navbar-item">
-                <nuxt-link :to="{name:'/'}">
+                <nuxt-child :to="'/'">
                     <p class="cool-link has-text-white is-size-5">Inicio</p>
-                </nuxt-link>
-                <nuxt-link to='/catalogo/'>
+                </nuxt-child>
+                <nuxt-child to='/catalogo'>
                     <p class="cool-link has-text-white is-size-5">Catálogo</p>
-                </nuxt-link>
-                <router-link :to="{ name: ''}">
+                </nuxt-child>
+                <nuxt-child :to="''">
                     <li class="cool-link has-text-white is-size-5">Contacto</li>
-                </router-link>
-                <router-link :to="{ name: ''}">
+                </nuxt-child>
+                <nuxt-child :to="''">
                     <li class="has-text-white is-size-5">Ayuda</li>
-                </router-link>
+                </nuxt-child>
             </ul>
         </div>
       </div>
