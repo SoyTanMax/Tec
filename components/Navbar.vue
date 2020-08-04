@@ -22,10 +22,10 @@
         <div class="navbar-end">
             <ul class="navbar-item">
                 <nuxt-link to="/">
-                    <li class="cool-link has-text-white is-size-5">Inicio</li>
+                    <p class="cool-link has-text-white is-size-5">Inicio</p>
                 </nuxt-link>
                 <nuxt-link to='/catalogo'>
-                    <li class="cool-link has-text-white is-size-5">Catálogo</li>
+                    <p class="cool-link has-text-white is-size-5">Catálogo</p>
                 </nuxt-link>
                 <router-link :to="{ name: ''}">
                     <li class="cool-link has-text-white is-size-5">Contacto</li>
@@ -66,7 +66,7 @@ ul {
 .navbar-item{
     padding: 28px 0;
 }
-li::after{
+p::after{
     content:'';
     display:block;
     width: 0;
@@ -75,7 +75,7 @@ li::after{
     transition: width .3s;
     border-radius: 1px;
 }
-li:hover:after{
+p:hover:after{
     width: 100%;
     transition: width .3s;
 }
