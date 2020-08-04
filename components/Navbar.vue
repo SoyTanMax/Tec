@@ -2,9 +2,9 @@
     <nav class="navbar is-transparent">
         <div class="navbar-brand">
             <div class="navbar-item">
-                <nuxt-child :to="'/'">
+                <nuxt-link to='/'>
                     <div class="has-text-white has-text-weight-bold is-size-4">Proyectos Tec</div>
-                </nuxt-child>
+                </nuxt-link>
             </div>
         <!--
     Using the v-on: directive to listen for the click event and toggle the data property showNav. Also, using the v-bind: directive to reactively update the class attribute 'is-active' based on the showNav property.
@@ -21,18 +21,18 @@
       <div class="navbar-menu" :class="{ 'is-active': showNav }">
         <div class="navbar-end">
             <ul class="navbar-item">
-                <nuxt-child :to="'/'">
-                    <p class="cool-link has-text-white is-size-5">Inicio</p>
-                </nuxt-child>
-                <nuxt-child to='/catalogo'>
-                    <p class="cool-link has-text-white is-size-5">Catálogo</p>
-                </nuxt-child>
-                <nuxt-child :to="''">
+                <nuxt-link :to="'/'">
+                    <li class="cool-link has-text-white is-size-5">Inicio</li>
+                </nuxt-link>
+                <nuxt-link :to="'/catalogo'">
+                    <li class="cool-link has-text-white is-size-5">Catálogo</li>
+                </nuxt-link>
+                <router-link :to="{ name: ''}">
                     <li class="cool-link has-text-white is-size-5">Contacto</li>
-                </nuxt-child>
-                <nuxt-child :to="''">
+                </router-link>
+                <router-link :to="{ name: ''}">
                     <li class="has-text-white is-size-5">Ayuda</li>
-                </nuxt-child>
+                </router-link>
             </ul>
         </div>
       </div>
@@ -66,7 +66,7 @@ ul {
 .navbar-item{
     padding: 28px 0;
 }
-p::after{
+li::after{
     content:'';
     display:block;
     width: 0;
@@ -75,7 +75,7 @@ p::after{
     transition: width .3s;
     border-radius: 1px;
 }
-p:hover:after{
+li:hover:after{
     width: 100%;
     transition: width .3s;
 }
