@@ -2,7 +2,7 @@
     <nav class="navbar is-transparent">
         <div class="navbar-brand">
             <div class="navbar-item">
-                <nuxt-link :to="'/'">
+                <nuxt-link to='/'>
                     <div class="has-text-white has-text-weight-bold is-size-4">Proyectos Tec</div>
                 </nuxt-link>
             </div>
@@ -21,10 +21,10 @@
       <div class="navbar-menu" :class="{ 'is-active': showNav }">
         <div class="navbar-end">
             <ul class="navbar-item">
-                <nuxt-link :to="'/'">
+                <nuxt-link to="/">
                     <li class="cool-link has-text-white is-size-5">Inicio</li>
                 </nuxt-link>
-                <nuxt-link :to="'/catalogo'">
+                <nuxt-link to='/catalogo'>
                     <li class="cool-link has-text-white is-size-5">Catálogo</li>
                 </nuxt-link>
                 <router-link :to="{ name: ''}">
