@@ -21,10 +21,10 @@
       <div class="navbar-menu" :class="{ 'is-active': showNav }">
         <div class="navbar-end">
             <ul class="navbar-item">
-                <nuxt-link to="/">
+                <nuxt-link :to="{name:'/'}">
                     <p class="cool-link has-text-white is-size-5">Inicio</p>
                 </nuxt-link>
-                <nuxt-link to='/catalogo'>
+                <nuxt-link to='/catalogo/'>
                     <p class="cool-link has-text-white is-size-5">Catálogo</p>
                 </nuxt-link>
                 <router-link :to="{ name: ''}">
