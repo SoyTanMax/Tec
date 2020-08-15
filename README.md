@@ -4,6 +4,10 @@
 
 In the summer of 2020, my university asked me to build a SPA to look for social service projects and this is the result.
 
+## Project Tools
+
+This SPA was built using Nuxt and Storyblok for the content management.
+
 ## Build Setup
 
 ```bash
