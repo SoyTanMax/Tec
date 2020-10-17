@@ -23,7 +23,8 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Nunito&display=swap' }
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Nunito&display=swap' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Rubik&display=swap"' }
     ]
   },
   /*
@@ -57,11 +58,7 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
     // Doc: https://github.com/nuxt/content
-    '@nuxt/content',
-    [
-      'storyblok-nuxt', 
-      {accessToken: 'Kbn7T5ky3XbowLKp7554Twtt', cacheProvider: 'memory'}
-    ]
+    '@nuxt/content'
   ],
   /*
   ** Axios module configuration

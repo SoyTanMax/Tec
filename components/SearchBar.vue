@@ -1,5 +1,5 @@
 <template>
-    <form class="searchBar" @submit.prevent="buscar">
+    <form class="searchBar" @submit.prevent="">
         <div class="field">
             <div class="control">
                 <input v-model="text" type="text" placeholder="Buscar proyectos por nombre, categoría, etc..." class="input"/>
@@ -9,7 +9,6 @@
                 </button>
             </div>
         </div>
-        
     </form>
 </template>
 
@@ -29,13 +28,7 @@ export default {
                 }
             ]
         }
-    },
-    methods: {
-        buscar() {
-            this.$emit("search-text", this.text);
-            this.text = '';
-        }
-    }      
+    }
 }
 </script>
 

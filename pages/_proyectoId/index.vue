@@ -8,11 +8,11 @@
         <div class="section info" :style="{background:'#edf2f7'}">
             <div class="columns">
                 <div class="column is-4">
-                    <div class="imagen" :style="{backgroundImage: 'url('+ imagen +')'}"></div>
+                    <div class="imagen"></div>
                 </div>
                 <div class="column">
-                    <p class="is-size-2">{{ titulo }}</p>
-                    <p class="is-size-5">{{ descripcion }}</p>
+                    <p class="is-size-2">{{  }}</p>
+                    <p class="is-size-5">{{  }}</p>
                 </div>
             </div>
         </div>
@@ -26,18 +26,8 @@
     export default {
         components:{
             Navbar
-        },
-        asyncData(context) {
-            return context.app.$storyapi.get('cdn/stories/catalogo/' + context.params.proyectoId, {
-                version: 'draft',
-            }).then(res => {
-                return {
-                    imagen: res.data.story.content.image,
-                    titulo: res.data.story.content.titulo,
-                    descripcion: res.data.story.content.descripcion,
-                }
-            })
         }
+
     }
 </script>
 
