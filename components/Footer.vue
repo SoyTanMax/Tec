@@ -1,7 +1,22 @@
 <template>
-    <div class="section is-medium">
-        <p class="has-text-centered has-text-white">Footer</p>
-    </div>
+    <footer class="section footer">
+        <div class="logo"> 
+            <p class="proyectos">Proyectos</p>
+            <p class="tec">Tec</p>
+        </div>
+        <p class="has-text-white is-size-7">@2020 Tecnológico de Monterrey. Todos los derechos reservados.</p>
+        <div class="social">
+            <div class="social-container">
+                <i class="fab fa-facebook-f"></i>
+            </div>
+            <div class="social-container">
+                <i class="fab fa-instagram"></i>
+            </div>
+            <div class="social-container">
+                <i class="fab fa-twitter"></i>
+            </div>
+        </div>
+    </footer>
 </template>
 
 <script>
@@ -13,15 +28,45 @@ export default {
 <style scoped>
 .section{
     position: relative;
-    background: #06325E;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background: black;
     padding-right: 96px;
     padding-left: 96px;
-    font-family: 'Nunito', sans-serif;;
+    font-family: 'Manrope', sans-serif;
 }
-@media screen and (max-width: 769px) {
-    .section{
-      padding-right: 24px;
-      padding-left: 24px;
-    }
+.logo{
+    display: flex;
+}
+.proyectos{
+    font-family: 'Nunito', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    color:  hsl(209, 75%, 45%);
+}
+.tec{
+    font-family: 'Nunito', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
+.social{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: baseline;
+}
+.social-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: #FFFFFF;
+    border-radius: 50%;
+    margin-right: 12px;
+}
+.social-container:hover{
+    background: hsl(209, 75%, 45%);
 }
 </style>

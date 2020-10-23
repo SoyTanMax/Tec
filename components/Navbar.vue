@@ -1,55 +1,47 @@
 <template>
-    <nav class="navbar">
+    <nav class="navbar is-transparent">
         <div class="navbar-brand">
             <div class="navbar-item">
-                <nuxt-link to='/'>
-                    <div class="logo has-text-weight-bold is-size-4">Proyectos Tec</div>
-                </nuxt-link>
+                <div class="logo"> <p class="proyectos">Proyectos</p><p class="tec">Tec</p></div>
             </div>
-        <!--
-    Using the v-on: directive to listen for the click event and toggle the data property showNav. Also, using the v-bind: directive to reactively update the class attribute 'is-active' based on the showNav property.
-    -->
-        <div class="navbar-burger" @click="showNav = !showNav" :class="{ 'is-active': showNav }">
-          <span class="has-text-white"></span>
-          <span class="has-text-white"></span>
-          <span class="has-text-white"></span>
+            <div class="navbar-burger" @click="showNav = !showNav" :class="{ 'is-active': showNav }">
+                <span class="has-text-white"></span>
+                <span class="has-text-white"></span>
+                <span class="has-text-white"></span>
+            </div>
         </div>
-      </div>
-      <!--
-    Using the v-bind: directive to reactively update the class attribute 'is-active' based on the showNav property.
-    -->
-      <div class="navbar-menu" :class="{ 'is-active': showNav }">
         <div class="navbar-end">
-            <ul class="navbar-item">
-                <nuxt-link :to="'/'">
-                    <li class="cool-link is-size-5">Inicio</li>
-                </nuxt-link>
-                <nuxt-link :to="'proyectos'">
-                    <li class="cool-link is-size-5">Proyectos</li>
-                </nuxt-link>
-                <nuxt-link :to="'organizaciones'">
-                    <li class="cool-link is-size-5">Organizaciones</li>
-                </nuxt-link>
-                <nuxt-link :to="'mis-proyectos'">
-                    <li class="cool-link is-size-5" v-if="loggedIn">Mis proyectos</li>
-                </nuxt-link>
-                <nuxt-link :to="'contacto'">
-                    <li class="cool-link is-size-5">Contacto</li>
-                </nuxt-link>
-                <Login />
-                <li class="cool-link is-size-5" v-if="loggedIn">Cerrar Sesión</li>
-            </ul>
+            <div class="navbar-menu" :class="{ 'is-active': showNav }">
+                <div class="navbar-start">
+                    <ul class="navbar-item">
+                        <nuxt-link :to="'/'">
+                            <li class="cool-link is-size-6 has-text-weight-semibold">Inicio</li>
+                        </nuxt-link>
+                        <nuxt-link :to="'proyectos'">
+                            <li class="cool-link is-size-6 has-text-weight-semibold">Proyectos</li>
+                        </nuxt-link>
+                        <nuxt-link :to="'organizaciones'">
+                            <li class="cool-link is-size-6 has-text-weight-semibold">Organizaciones</li>
+                        </nuxt-link>
+                        <Login />
+                        <Signup />
+                        <li class="cool-link is-size-5" v-if="loggedIn">Cerrar Sesión</li>
+                    </ul>
+                </div>
+            </div>
         </div>
-      </div>
+        
     </nav>
 </template>
 
 <script>
     import Login from "~/components/Login"
+    import Signup from "~/components/Signup"
     export default {
         name: 'Navbar',
         components: {
-            Login
+            Login,
+            Signup
         },
         data () {
             return {
@@ -65,44 +57,45 @@
 </script>
 
 <style scoped>
-
 .navbar{
-    padding-right: 96px;
-    padding-left: 96px; 
-    font-family: 'Nunito', sans-serif;
+    position: absolute;
+    width: 100%;
+    padding: 16px 96px;
 }
-ul {
-    list-style: none;
+.navbar-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ul{
+    padding-right: 0;
+    padding-left: 0;
+}
+.cool-link{
+    font-family: 'Manrope', sans-serif;
+    line-height: 20px;
+    color: rgb(99, 99, 99);
+    padding-right: 32px;
 }
 .logo{
-    color: #084F95;
+    display: flex;
 }
-.cool-link {
-    padding: 0;
-    margin-right: 42px;
-    color: #084F95;
+.proyectos{
+    font-family: 'Nunito', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    color:  hsl(209, 75%, 45%);
 }
-.navbar-item{
-    padding: 18px 0;
+.tec{
+    font-family: 'Nunito', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
 }
-li::after{
-    content:'';
-    display:block;
-    width: 0;
-    height: 2px;
-    background: #084F95;
-    transition: width .3s;
-    border-radius: 1px;
+.nuxt-link-exact-active li{
+    color:hsl(209, 75%, 45%);
 }
-li:hover:after{
-    width: 100%;
-    transition: width .3s;
-}
-
-/* mobile */
-@media screen and (max-width: 769px) {
-    .navbar-item{
-        padding: 0;
-    }
+li:hover{
+    color:hsl(209, 75%, 45%);
 }
 </style>

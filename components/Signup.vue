@@ -1,7 +1,7 @@
 <template>
     <div>
         <button class="button login-button" @click="showModal = !showModal">
-            Ingresar
+            Registrarse
         </button>
         <div class="modal" :class="{ 'is-active': showModal, 'is-clipped': showModal }">
             <div class="modal-background"></div>
@@ -33,7 +33,7 @@
 
 <script>
     export default {
-        name: 'Login',
+        name: 'Signup',
         data() {
             return {
                 showModal: false
@@ -45,14 +45,13 @@
 <style scoped>
 .login-button{
     border: none;
-    background: hsl(209, 77%, 76%);
+    background: hsl(209, 75%, 45%);
     font-family: 'Manrope', sans-serif;
     border-radius: 8px;
     font-size: 14px;
-    color: hsl(209, 75%, 45%);
+    color: white;
     padding: 20px 32px;
     font-weight: 700;
-    margin-right: 14px;
 }
 /* modal */
 .box{
@@ -72,7 +71,7 @@
 .login{
     border: none;
     border-radius: 8px;
-    background:  hsl(209, 75%, 45%);
+    background: hsl(209, 75%, 36%);
     height: 48px;
     font-family: 'Manrope', sans-serif;
 }

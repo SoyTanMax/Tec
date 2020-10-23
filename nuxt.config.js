@@ -24,7 +24,10 @@ export default {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Nunito&display=swap' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Rubik&display=swap"' }
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Manrope&display=swap' }
+    ],
+    script: [
+      { hid: 'fontawesome', src: 'https://use.fontawesome.com/releases/v5.3.1/js/all.js', defer: true }
     ]
   },
   /*

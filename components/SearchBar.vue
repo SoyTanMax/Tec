@@ -2,10 +2,10 @@
     <form class="searchBar" @submit.prevent="">
         <div class="field">
             <div class="control">
-                <input v-model="text" type="text" placeholder="Buscar proyectos por nombre, categoría, etc..." class="input"/>
+                <input v-model="text" type="text" placeholder="Buscar proyectos por nombre, categoría..." class="input"/>
                 <button class="button">
                     <i class="fas fa-search is-size-4"></i>
-                    <p class="is-size-4">Buscar</p>
+                    <p class="is-size-5">Buscar</p>
                 </button>
             </div>
         </div>
@@ -37,11 +37,13 @@ export default {
 .input{
     height: 64px;
     padding: 24px;
-    min-width: 478px;;
-    border: none;
+    min-width: 360px;
     margin-right: 0;
     border-radius: 12px 0px 0px 12px;
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Manrope', sans-serif;
+    box-shadow: none;
+    margin-top: 24px;
+    background: #f4fbff;
 }
 .button{
     height: 64px;
@@ -53,7 +55,8 @@ export default {
     margin-left: 0;
     font-weight: bold;
     padding: 16px 32px;
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Manrope', sans-serif;
+    margin-top: 24px;
 }
 .control{
     display: flex;
