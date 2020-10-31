@@ -66,11 +66,11 @@ export default {
 p{
     margin-left: 8px;
 }
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 1024px) {
     .input{
-        height: 32px;
+        height: 24px;
         padding: 24px;
-        min-width: 200px;;
+        min-width: 160px;
         border-radius: 12px 0px 0px 12px;
     }
     .button{

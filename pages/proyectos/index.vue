@@ -1,42 +1,61 @@
 <template>
-    <div class="catalogo">
-        <div class="section proyectos" :style="{background:'#edf2f7'}">
-            <div class="catalogo-container">
-                
-            </div>
+    <div class="section is-small projects">
+        <p class="top is-black">Todos los proyectos</p>
+        <div class="projects-container">
+            <Preview v-for="proyecto in proyectos" :key="proyecto.id"
+                :image="proyecto.image"
+                :title="proyecto.title"
+                :org="proyecto.org"
+                :description="proyecto.description"
+                :etiqueta="proyecto.etiqueta"
+                :id="proyecto.id"
+            />
         </div>
-        <Footer />
     </div>
 </template>
 
 <script>
-    import Footer from '~/components/Footer'
+    import db from '~/services/firebase'
+    import Preview from '~/components/Preview'
     export default {
-        components: {
-            Catalog,
-            Footer
+        layout: 'normal',
+        components:{
+            Preview
+        },
+        data() {
+            return {
+                proyectos: []
+            }
+        },
+        created(){
+            db.collection('proyectos').get().then(snapshot => {
+                snapshot.docs.forEach(doc => {
+                    let proyecto = doc.data()
+                    this.proyectos.push(proyecto)
+                });
+            })
         }
     }
 </script>
 
 <style scoped>
-.hero{
-  position: relative;
-  padding-right: 96px;
-  padding-left: 96px;
-  background:#137EE9;
-  font-family: 'Nunito', sans-serif;
-}
-.proyectos{
-    height: 90vh;
-    padding-right: 96px;
-    padding-left: 96px;
-}
-.catalogo-container{
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 24px;
-    padding: 0;
-    font-family: 'Nunito', sans-serif;
-}
+    .projects{
+        background: white;
+        padding-right: 96px;
+        padding-left: 96px;
+        font-family: 'Manrope', sans-serif;
+    }
+    .top{
+        font-weight: 800;
+        font-size: 32px;
+        line-height: 64px;
+        color: #18191F;
+    }
+    .projects-container{
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: 48px;
+        padding: 48px 0;
+        font-family: 'Nunito', sans-serif;
+    }
 </style>

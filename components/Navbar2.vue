@@ -1,8 +1,8 @@
 <template>
-    <nav class="navbar is-transparent">
+    <nav class="navbar is-black">
         <div class="navbar-brand">
-            <div class="navbar-item is-paddingless">
-                <div class="logo"><p class="proyectos">Proyectos</p><p class="tec">Tec</p></div>
+            <div class="navbar-item">
+                <div class="logo"> <p class="proyectos">Proyectos</p><p class="tec">Tec</p></div>
             </div>
             <div class="navbar-burger" @click="showNav = !showNav" :class="{ 'is-active': showNav }">
                 <span class="has-text-white"></span>
@@ -68,7 +68,7 @@
 
 <style scoped>
 .navbar{
-    position: absolute;
+    position: relative;
     width: 100%;
     padding: 16px 96px;
 }
@@ -84,7 +84,7 @@ ul{
 .cool-link{
     font-family: 'Manrope', sans-serif;
     line-height: 20px;
-    color: rgb(99, 99, 99);
+    color: white;
     padding-right: 32px;
 }
 .logo{
@@ -108,15 +108,4 @@ ul{
 li:hover{
     color:hsl(209, 75%, 45%);
 }
-@media (max-width: 1024px){
-    .navbar{
-        padding: 12px 24px;
-    }
-    .navbar-burger{
-        position: absolute;
-        top: 12px;
-        right: 0;
-    }
-}
-
 </style>

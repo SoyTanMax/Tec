@@ -65,8 +65,10 @@ export default {
     background: #FFFFFF;
     border-radius: 50%;
     margin-right: 12px;
+    color: black;
 }
 .social-container:hover{
     background: hsl(209, 75%, 45%);
+    color: white;
 }
 </style>

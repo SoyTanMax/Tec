@@ -12,16 +12,16 @@
                         <div class="field">
                             <div class="control">
                                 <label for="correo" class="label">Correo electrónico</label>
-                                <input type="email" class="input" id="correo">
+                                <input type="email" class="input" id="correo" v-model="account.email">
                             </div>
                         </div>
                         <div class="field">
                             <div class="control">
                                 <label for="correo" class="label">Contraseña</label>
-                                <input type="password" class="input" id="correo">
+                                <input type="password" class="input" id="correo" v-model="account.password">
                             </div>
                         </div>
-                        <button class="button is-fullwidth login has-text-white has-text-weight-bold">Ingresar</button>
+                        <button class="button is-fullwidth login has-text-white has-text-weight-bold" @click="login">Ingresar</button>
                     </form>
                 </div>
             </div>
@@ -32,13 +32,32 @@
 </template>
 
 <script>
+    import db from '~/services/firebase'
+    import { auth } from '~/services/firebase'
     export default {
         name: 'Login',
         data() {
             return {
-                showModal: false
+                showModal: false,
+                account: {
+                    email: '',
+                    password: ''
+                }
             }
         },
+        methods: {
+            login(){
+                auth.signInWithEmailAndPassword(this.account.email, this.account.password).then(
+                    user => {
+                        this.$router.push('publicaciones')
+                    },
+                    error => {
+                        this.isError = true;
+                        this.errorMsg = error.code
+                    }
+                )
+            }
+        }
     }
 </script>
 
@@ -75,5 +94,8 @@
     background:  hsl(209, 75%, 45%);
     height: 48px;
     font-family: 'Manrope', sans-serif;
+}
+.modal{
+    z-index: 99;
 }
 </style>

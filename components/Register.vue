@@ -50,7 +50,7 @@
         background: rgb(235, 161, 52);
         border-top-left-radius: 70px;  
         border-top-right-radius: 70px;
-        z-index: 99;
+        z-index: 98;
     }
     .half-circle-2{
         position: absolute;
@@ -61,6 +61,7 @@
         background: hsl(305, 67%, 63%);
         border-bottom-left-radius: 70px;  
         border-bottom-right-radius: 70px;
+        z-index: 98;
     }
     .half-circle-3{
         position: absolute;
@@ -71,7 +72,7 @@
         background: rgb(96, 220, 224);
         border-bottom-left-radius: 70px;  
         border-top-left-radius: 70px;
-        z-index: 99;
+        z-index: 98;
     }
     .half-circle-4{
         position: absolute;
@@ -82,6 +83,6 @@
         background: hsl(210, 92%, 23%);
         border-bottom-right-radius: 70px;  
         border-top-right-radius: 70px;
-        z-index: 99;
+        z-index: 98;
     }
 </style>

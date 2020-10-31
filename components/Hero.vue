@@ -4,17 +4,17 @@
             <Navbar class="navbar"/>
         </div>
         <div class="hero-body">
-            <div class="layer">
+            <div class="layer is-hidden-mobile">
                 <img src="~/assets/remote-work-man.svg" class="man" alt="">
                 <img src="~/assets/remote-work-woman.svg" class="woman" alt="">
                 <div class="half-circle"></div>
                 <div class="half-circle-2"></div>
                 <div class="half-circle-3"></div>
             </div>
-            <div class="container">
+            <div class="section">
                 <div class="slogan">Encuentra el proyecto justo para ti.</div>
                 <div class="descripcion">Necesitamos voluntarios que busquen experiencias increíbles.</div>
-                <SearchBar/>
+                <SearchBar />
             </div>
         </div>
     </div>
@@ -56,7 +56,6 @@
         background: rgb(235, 161, 52);
         border-bottom-left-radius: 70px;  
         border-bottom-right-radius: 70px;
-        z-index: 99;
     }
     .half-circle-2{
         position: absolute;
@@ -70,14 +69,13 @@
     }
     .half-circle-3{
         position: absolute;
-        bottom: -5%;
-        left: 40%;
+        bottom: 5%;
+        left: 60%;
         width: 70px;
         height: 140px;
         background: rgb(96, 220, 224);
         border-bottom-right-radius: 70px;  
         border-top-right-radius: 70px;
-        z-index: 99;
     }
     .woman{
         position: absolute;
@@ -91,7 +89,7 @@
         left: 10%;
         width: 300px;
     }
-    .container{
+    .section{
         position: relative;
         display: flex;
         flex-direction: column;
@@ -103,12 +101,12 @@
     .slogan{
         display: flex;
         font-weight: bolder;
-        font-size: 42px;
         line-height: 48px;
+        width: 80%;
+        font-size: 42px;
         color: #18191F;
         font-family: 'Manrope', sans-serif;
         letter-spacing: 2px;
-        max-width: 500px;
     }
     .highlight{
         color: hsl(209, 75%, 45%);
@@ -122,4 +120,21 @@
         margin-top: 64px;
         font-size: 16px;
     }
+@media (max-width: 1023px){
+    .section{
+        background: hsl(210, 92%, 23%);
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+    .slogan{
+        color: white;
+        font-size: 24px;
+        line-height: 32px;
+        width: 100%;
+    }
+    .descripcion{
+        color: white;
+        margin-top: 32px;
+    }
+}
 </style>

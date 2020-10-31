@@ -1,55 +1,73 @@
 <template>
-    <div class="proyecto">
-        <div class="hero">
-            <div class="hero-head">
-                <Navbar/>
-            </div>
+    <div class="proyecto-id section">
+        <div v-if="proyecto" class="image" :style="{backgroundImage: 'url(' + proyecto.image + ')'}"></div>
+        <div class="info">
+            <h1 v-if="proyecto" class="titulo">{{ proyecto.title }}</h1>
+            <p v-if="proyecto" class="descripcion">{{ proyecto.description }}</p>
         </div>
-        <div class="section info" :style="{background:'#edf2f7'}">
-            <div class="columns">
-                <div class="column is-4">
-                    <div class="imagen"></div>
-                </div>
-                <div class="column">
-                    <p class="is-size-2">{{  }}</p>
-                    <p class="is-size-5">{{  }}</p>
-                </div>
-            </div>
-        </div>
-        <Footer />
     </div>
 </template>
 
 <script>
-    import Navbar from '~/components/Navbar'
-    import Footer from '~/components/Footer'
+    import db from '~/services/firebase'
     export default {
-        components:{
-            Navbar
+        layout: 'normal',
+        data(){
+            return {
+                proyectos: []
+            }
+        },
+        computed: {
+            proyecto(){
+                let id = this.$route.params.proyectoId
+                return this.proyectos.find( proyecto => {
+                    return proyecto.id == id
+                })
+            }
+        },
+        created(){
+            db.collection('proyectos').onSnapshot( (snapshot) => {
+                snapshot.docs.forEach( doc => {
+                    let proyecto = doc.data();
+                    this.proyectos.push(proyecto)
+                })
+            });
         }
-
     }
 </script>
 
 <style scoped>
-.proyecto{
-    font-family: 'Nunito', sans-serif;
-}
-.hero {
-    background: #137EE9;
-    padding-right: 96px;
-    padding-left: 96px;
-}
-.info{
-    height: 90vh;
-    padding-right: 96px;
-    padding-left: 96px;
-}
-.imagen{
-    background-position: center;
-    background-size: cover;
-    border-radius: 8px 8px 0 0;
-    width: 100%;
-    height: 256px;
-}
+    .proyecto-id{
+        height: 100vh;
+        background: #EDEFF3;
+        padding-right: 96px;
+        padding-left: 96px;
+        display: flex;
+        font-family: 'Manrope', sans-serif;
+    }
+    .image{
+        background-position: center;
+        background-size: cover;
+        width: 380px;
+        height: 320px;
+        margin-bottom: 12px;
+        border-radius: 8px;
+        margin-right: 24px;
+    }
+    .info{
+        display: flex;
+        flex-direction: column;
+        max-width: 60%;
+    }
+    .titulo{
+        font-weight: 800;
+        font-size: 32px;
+        line-height: 64px;
+        color: #18191F;
+        margin-bottom: 24px;
+    }
+    .descripción{
+        color: #18191F;
+        font-size: 20px;
+    }
 </style>

@@ -7,8 +7,14 @@
             <div class="modal-background"></div>
             <div class="modal-content">
                 <div class="box">
-                    <div class="has-text-centered has-text-weight-medium is-size-5 inicia">Inicia sesión como organización</div>
+                    <div class="has-text-centered has-text-weight-medium is-size-5 inicia">Llena el formulario de solicitud</div>
                     <form @submit.prevent>
+                        <div class="field">
+                            <div class="control">
+                                <label for="nombre" class="label">Nombre de la organización</label>
+                                <input type="text" class="input" id="nombre">
+                            </div>
+                        </div>
                         <div class="field">
                             <div class="control">
                                 <label for="correo" class="label">Correo electrónico</label>
@@ -17,11 +23,11 @@
                         </div>
                         <div class="field">
                             <div class="control">
-                                <label for="correo" class="label">Contraseña</label>
-                                <input type="password" class="input" id="correo">
+                                <label for="razon" class="label">Razón</label>
+                                <textarea type="text" class="razon" id="razon"></textarea>
                             </div>
                         </div>
-                        <button class="button is-fullwidth login has-text-white has-text-weight-bold">Ingresar</button>
+                        <button class="button is-fullwidth login has-text-white has-text-weight-bold">Enviar</button>
                     </form>
                 </div>
             </div>
@@ -74,5 +80,16 @@
     background: hsl(209, 75%, 36%);
     height: 48px;
     font-family: 'Manrope', sans-serif;
+}
+.modal{
+    z-index: 99;
+}
+.razon{
+    height: 150px;
+    width: 100%;
+    border: 1px solid #e4e4e4;
+    border-radius: 8px;
+    box-shadow: none;
+    padding: 8px;
 }
 </style>

@@ -1,9 +1,10 @@
 <template>
   <div class="Home">
-    <Hero />
-    <How />
+    <Hero class="hero"/>
+    <How class="how"/>
     <Projects />
     <Register />
+    <Orgs />
     <Footer />
   </div>
 </template>
@@ -13,6 +14,7 @@ import Hero from '~/components/Hero'
 import How from '~/components/HowItWorks'
 import Projects from '~/components/Projects'
 import Register from '~/components/Register'
+import Orgs from '~/components/Orgs'
 import Footer from "~/components/Footer"
 
 export default {
@@ -21,12 +23,15 @@ export default {
     How,
     Projects,
     Register,
+    Orgs,
     Footer
   }
 }
 </script>
 
 <style scoped>
-
+.how{
+  z-index: 97;
+}
 </style>
 

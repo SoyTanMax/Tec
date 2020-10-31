@@ -8,6 +8,7 @@
                 :org="proyecto.org"
                 :description="proyecto.description"
                 :etiqueta="proyecto.etiqueta"
+                :id="proyecto.id"
             />
         </div>
     </div>
@@ -15,9 +16,9 @@
 
 <script>
     import db from '~/services/firebase'
-    import Preview from '~/components/Projects'
+    import Preview from '~/components/Preview'
     export default {
-        name: 'Projects',
+        layout: 'normal',
         components:{
             Preview
         },

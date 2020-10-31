@@ -5,7 +5,9 @@
         <div class="org"> {{ org }} </div>
         <div class="bottom">
             <p class="etiqueta is-uppercase">{{ etiqueta }}</p>
-            <button class="button is-rounded has-text-weight-semibold">Ver más</button>
+            <nuxt-link :to="id">
+                <button class="button is-rounded has-text-weight-semibold">Ver más</button>
+            </nuxt-link>
         </div>
     </div>
 </template>
@@ -28,6 +30,9 @@
                 type: String
             },
             etiqueta: {
+                type: String
+            },
+            id: {
                 type: String
             }
         }
@@ -67,6 +72,10 @@
     padding: 10px 18px;
     font-size: 14px;
     border: none;
+    transition: 300ms;
+}
+.button:hover{
+    transform: scale(1.03);
 }
 .bottom{
     display: flex;
