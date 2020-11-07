@@ -4,7 +4,7 @@
             <p class="proyectos">Proyectos</p>
             <p class="tec">Tec</p>
         </div>
-        <p class="has-text-white is-size-7">@2020 Tecnológico de Monterrey. Todos los derechos reservados.</p>
+        <p class="has-text-white is-size-7 derechos">@2020 Tecnológico de Monterrey. Todos los derechos reservados.</p>
         <div class="social">
             <div class="social-container">
                 <i class="fab fa-facebook-f"></i>
@@ -70,5 +70,19 @@ export default {
 .social-container:hover{
     background: hsl(209, 75%, 45%);
     color: white;
+}
+@media screen and (max-width: 1024px){
+    .footer{
+        flex-direction: column;
+        padding-right: 24px;
+        padding-left: 24px;
+    }
+    .derechos{
+        text-align: center;
+        margin-bottom: 12px;
+    }
+    .logo{
+        margin-bottom: 12px
+    }
 }
 </style>

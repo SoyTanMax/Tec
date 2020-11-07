@@ -46,7 +46,6 @@
 .image{
     background-position: center;
     background-size: cover;
-    width: 100%;
     height: 280px;
     margin-bottom: 12px;
     border-radius: 8px;
@@ -85,5 +84,11 @@
     font-weight: 800;
     font-size: 14px;
     color: #18191F;
+}
+@media screen and (max-width: 1024px){
+    .image{
+        height: 240px;
+        width: 240px;
+    }
 }
 </style>

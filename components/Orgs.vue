@@ -30,4 +30,10 @@ img{
     width: 640px;
     margin: 24px auto;
 }
+@media screen and (max-width: 1024px){
+    .top{
+        line-height: 42px;
+        margin-bottom: 12px;
+    }
+}
 </style>

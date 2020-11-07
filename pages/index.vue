@@ -1,7 +1,6 @@
 <template>
   <div class="Home">
     <Hero class="hero"/>
-    <How class="how"/>
     <Projects />
     <Register />
     <Orgs />
@@ -30,8 +29,5 @@ export default {
 </script>
 
 <style scoped>
-.how{
-  z-index: 97;
-}
 </style>
 

@@ -40,7 +40,7 @@
 
 <style scoped>
     .projects{
-        background: white;
+        background: #f4fbff;
         padding-right: 96px;
         padding-left: 96px;
         font-family: 'Manrope', sans-serif;
@@ -55,7 +55,20 @@
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
         gap: 48px;
-        padding: 48px 0;
+        padding: 24px 0 0;
         font-family: 'Nunito', sans-serif;
+    }
+    @media screen and (max-width: 1024px){
+        .projects{
+            padding-right: 24px;
+            padding-left: 24px;
+        }
+        .projects-container{
+            display: flex;
+            overflow-x: scroll;  
+        }
+        .projects-container::-webkit-scrollbar{
+            display: none;
+        } 
     }
 </style>

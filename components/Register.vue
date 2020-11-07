@@ -1,6 +1,6 @@
 <template>
     <div class="section is-medium register">
-        <p class="top is-black has-text-centered is-size-3">¿Buscas publicar tu proyecto?</p>
+        <p class="top is-black has-text-centered">¿Buscas publicar tu proyecto?</p>
         <SignUp />
         <div class="half-circle"></div>
         <div class="half-circle-2"></div>
@@ -39,7 +39,9 @@
         margin-bottom: 24px;
     }
     .button{
+        position: relative;
         background: white;
+        z-index: 99;
     }
     .half-circle{
         position: absolute;
@@ -84,5 +86,35 @@
         border-bottom-right-radius: 70px;  
         border-top-right-radius: 70px;
         z-index: 98;
+    }
+    @media screen and (max-width: 1024px){
+        .top{
+            font-size: 24px;
+            line-height: 28px;
+        }
+        .register{
+            position: relative;
+            padding-right: 24px;
+            padding-left: 24px;
+        }
+        .half-circle{
+            width: 60px;
+            height: 30px;
+            left: 90%;
+        }
+        .half-circle-2{
+            width: 60px;
+            height: 30px;
+            left: -5%;
+        }
+        .half-circle-3{
+            width: 30px;
+            height: 60px;
+        }
+        .half-circle-4{
+            width: 30px;
+            height: 60px;
+            left: 90%;
+        }
     }
 </style>
