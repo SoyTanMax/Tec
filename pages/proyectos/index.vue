@@ -39,23 +39,40 @@
 </script>
 
 <style scoped>
+.projects{
+    background: white;
+    padding-right: 96px;
+    padding-left: 96px;
+    font-family: 'Manrope', sans-serif;
+}
+.top{
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 64px;
+    color: #18191F;
+}
+.projects-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 48px;
+    padding: 48px 0;
+    font-family: 'Nunito', sans-serif;
+}
+@media screen and (max-width: 1024px){
     .projects{
-        background: white;
-        padding-right: 96px;
-        padding-left: 96px;
-        font-family: 'Manrope', sans-serif;
-    }
-    .top{
-        font-weight: 800;
-        font-size: 32px;
-        line-height: 64px;
-        color: #18191F;
+        padding-right: 24px;
+        padding-left: 24px;
     }
     .projects-container{
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-        gap: 48px;
-        padding: 48px 0;
-        font-family: 'Nunito', sans-serif;
+        display: flex;
+        overflow-x: scroll;
+        padding: 24px 0px;
     }
+    .top{
+        line-height: 38px;
+    }
+    .projects-container::-webkit-scrollbar{
+        display: none;
+    } 
+}
 </style>

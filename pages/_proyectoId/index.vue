@@ -83,88 +83,108 @@
 </script>
 
 <style scoped>
+.proyecto-id{
+    height: 100vh;
+    background: #EDEFF3;
+    padding-right: 96px;
+    padding-left: 96px;
+    display: flex;
+    font-family: 'Manrope', sans-serif;
+}
+.image{
+    background-position: center;
+    background-size: cover;
+    width: 380px;
+    height: 320px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    margin-right: 24px;
+}
+.top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+}
+.info{
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+}
+.titulo{
+    font-weight: 800;
+    font-size: 32px;
+    line-height: 64px;
+    color: #18191F;
+}
+.descripción{
+    color: #18191F;
+    font-size: 20px;
+}
+.icons{
+    display: flex;
+    align-items: baseline;
+}
+.cancel{
+    width: 22px;
+    color: rgb(180, 180, 180);
+    margin-right: 12px;
+}
+.edit, .save, .errase{
+    width: 26px;
+    color: rgb(180, 180, 180);
+}
+.edit{
+    margin-right: 12px;
+}
+.edit:hover, .save:hover, .cancel:hover, .errase:hover{
+    color: rgb(122, 122, 122);
+}
+.input{
+    max-width: 350px;
+    border: none;
+    box-shadow: none;
+    background: #EDEFF3;
+    border-bottom: 1px solid rgb(180, 180, 180);
+    border-radius: 0;
+}
+textarea{
+    padding: 12px;
+    border: none;
+    box-shadow: none;
+    background: #EDEFF3;
+}
+/* modal */
+.borrar{
+    padding: 48px;
+}
+.borrar-button{
+    margin-top: 24px;
+    border: none;
+    border-radius: 8px;
+    color:  white;
+    background: hsl(209, 75%, 45%);
+    height: 48px;
+    font-family: 'Manrope', sans-serif;
+}
+@media screen and (max-width: 1024px){
     .proyecto-id{
-        height: 100vh;
-        background: #EDEFF3;
-        padding-right: 96px;
-        padding-left: 96px;
-        display: flex;
-        font-family: 'Manrope', sans-serif;
-    }
-    .image{
-        background-position: center;
-        background-size: cover;
-        width: 380px;
-        height: 320px;
-        margin-bottom: 12px;
-        border-radius: 8px;
-        margin-right: 24px;
-    }
-    .top{
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin-bottom: 24px;
-    }
-    .info{
         display: flex;
         flex-direction: column;
-        width: 60%;
+        padding-right: 24px;
+        padding-left: 24px;
     }
-    .titulo{
-        font-weight: 800;
-        font-size: 32px;
-        line-height: 64px;
-        color: #18191F;
+    .image{
+        width: 100%;
     }
-    .descripción{
-        color: #18191F;
-        font-size: 20px;
-    }
-    .icons{
+    header{
         display: flex;
-        align-items: baseline;
+        min-width: 260px;
     }
-    .cancel{
-        width: 22px;
-        color: rgb(180, 180, 180);
-        margin-right: 12px;
+    .box{
+        margin: 0 12px;
+        padding: 48px 24px;
     }
-    .edit, .save, .errase{
-        width: 26px;
-        color: rgb(180, 180, 180);
-    }
-    .edit{
-        margin-right: 12px;
-    }
-    .edit:hover, .save:hover, .cancel:hover, .errase:hover{
-        color: rgb(122, 122, 122);
-    }
-    .input{
-        max-width: 350px;
-        border: none;
-        box-shadow: none;
-        background: #EDEFF3;
-        border-bottom: 1px solid rgb(180, 180, 180);
-        border-radius: 0;
-    }
-    textarea{
-        padding: 12px;
-        border: none;
-        box-shadow: none;
-        background: #EDEFF3;
-    }
-    /* modal */
-    .borrar{
-        padding: 48px;
-    }
-    .borrar-button{
-        margin-top: 24px;
-        border: none;
-        border-radius: 8px;
-        color:  white;
-        background: hsl(209, 75%, 45%);
-        height: 48px;
-        font-family: 'Manrope', sans-serif;
-    }
+    
+}
 </style>

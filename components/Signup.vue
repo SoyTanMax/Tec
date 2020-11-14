@@ -92,4 +92,11 @@
     box-shadow: none;
     padding: 8px;
 }
+@media screen and (max-width: 1024px){
+    .login-button{
+        background:  hsl(204, 92%, 58%);
+        color: white;
+        width: 100%;
+    }
+}
 </style>

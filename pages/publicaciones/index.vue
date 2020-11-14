@@ -26,6 +26,10 @@
                     :id="proyecto.id"
                 />
             </div>
+            <button class="button is-medium is-rounded crear2" @click="showModal = !showModal">
+                <svg class="w-6 h-6" fill="#FFFFFF" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z" clip-rule="evenodd"></path></svg>
+                Crear publicación
+            </button>
         </div>
         <div class="modal" :class="{ 'is-active': showModal, 'is-clipped': showModal }">
             <div class="modal-background"></div>
@@ -199,6 +203,9 @@ img{
     border: none;
     transition: 300ms;
 }
+.crear2{
+    display: none;
+}
 .button:hover{
     transform: scale(1.03);
 }
@@ -278,5 +285,41 @@ textarea{
 }
 .modal{
     z-index: 99;
+}
+@media screen and (max-width: 1024px){
+    .projects-container{
+        display: flex;
+        overflow-x: scroll;
+        padding: 24px 0px;
+    }
+    .projects-container::-webkit-scrollbar{
+        display: none;
+    }
+    .mis-proyectos{
+        padding-right: 24px;
+        padding-left: 24px;
+    }
+    .crear{
+        display: none;
+    }
+    .crear2{
+        display: flex;
+        background: hsl(209, 75%, 45%);
+        color: white;
+        margin-top: 18px;
+        border: none;
+        transition: 300ms;
+        margin: 0 auto;
+    }
+    .box{
+        padding: 48px 24px;
+        margin: 0 12px;
+    }
+    .modal-content::-webkit-scrollbar{
+        display: none;
+    }
+    .drop-zone{
+        max-width: 90%;
+    }
 }
 </style>

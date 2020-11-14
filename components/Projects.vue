@@ -70,5 +70,8 @@
         .projects-container::-webkit-scrollbar{
             display: none;
         } 
+        .top{
+            line-height: 38px;
+        }
     }
 </style>

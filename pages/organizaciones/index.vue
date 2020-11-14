@@ -24,5 +24,14 @@
     color: #18191F;
     margin-bottom: 24px;
 }
+@media screen and (max-width: 1024px){
+    .organizaciones{
+        padding-right: 24px;
+        padding-left: 24px;
+    }
+    .titulo{
+        line-height: 38px;
+    }
+}
     
 </style>

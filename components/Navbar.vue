@@ -3,7 +3,9 @@
         <div class="nav-overlay" @click="showNav = !showNav" :class="{ 'is-active': showNav }"></div>
         <div class="navbar-brand">
             <div class="navbar-item is-paddingless">
-                <div class="logo"><p class="proyectos">Proyectos</p><p class="tec">Tec</p></div>
+                <nuxt-link :to="'/'">
+                    <div class="logo"><p class="proyectos">Proyectos</p><p class="tec">Tec</p></div>
+                </nuxt-link>
             </div>
             <div class="navbar-burger" @click="showNav = !showNav" :class="{ 'is-active': showNav }">
                 <span></span>
@@ -130,13 +132,14 @@ li:hover{
         padding: 12px 24px;
     }
     .navbar-burger{
-        z-index: 3;
+        z-index: 0;
         right: -24px;
     }
     .navbar-burger.is-active{
-        position: fixed;
+        position: absolute;
         top: 0;
         right: 0;
+        margin-top: 12px;
     }
     .navbar-burger span{
         color:white;
@@ -148,10 +151,9 @@ li:hover{
         position: fixed;
         top: 0;
         right: 0;
-        padding: 24px 48px;
+        padding: 24px 28px;
         height: 100vh;
-        width: 80%;
-        box-shadow: 0 0 0 8px rgba(0, 0, 0, 0.1);
+        width: 85%;
     }
     .cool-link{
         color: #72a1cc;
@@ -174,7 +176,6 @@ li:hover{
         backdrop-filter: blur(2px);
         visibility: hidden;
         opacity: 0;
-        z-index: 1;
     }
     .nav-overlay.is-active{
         visibility: visible;

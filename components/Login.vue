@@ -64,7 +64,7 @@
 <style scoped>
 .login-button{
     border: none;
-    background: hsl(209, 77%, 76%);
+    background: white;
     font-family: 'Manrope', sans-serif;
     border-radius: 8px;
     font-size: 14px;
@@ -97,5 +97,20 @@
 }
 .modal{
     z-index: 99;
+}
+@media screen and (max-width: 1024px){
+    .login-button{
+        background:  hsl(209, 75%, 45%);
+        color: white;
+        margin-bottom: 18px;
+        width: 100%;
+    }
+    .box{
+        padding: 48px 24px;
+        margin: 0 12px;
+    }
+    .modal{
+        z-index: 99;
+    }
 }
 </style>

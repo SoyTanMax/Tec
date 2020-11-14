@@ -1,7 +1,7 @@
 <template>
     <div class="section is-medium register">
         <p class="top is-black has-text-centered">¿Buscas publicar tu proyecto?</p>
-        <SignUp />
+        <SignUp class="signup"/>
         <div class="half-circle"></div>
         <div class="half-circle-2"></div>
         <div class="half-circle-3"></div>
@@ -41,6 +41,9 @@
     .button{
         position: relative;
         background: white;
+        z-index: 99;
+    }
+    .signup, .top{
         z-index: 99;
     }
     .half-circle{
@@ -110,11 +113,12 @@
         .half-circle-3{
             width: 30px;
             height: 60px;
+            left: 3%;
         }
         .half-circle-4{
             width: 30px;
             height: 60px;
-            left: 90%;
+            left: 93%;
         }
     }
 </style>
