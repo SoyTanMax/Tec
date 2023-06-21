@@ -16,7 +16,7 @@
     "@nuxtjs/pwa": "^3.0.0-beta.20",
     "crypto-random-string": "^3.3.0",
     "firebase": "^7.24.0",
-    "nuxt": "^2.14.0",
+    "nuxt": "^3.4.3",
     "quill": "^1.3.7",
     "slugify": "^1.4.5",
     "storyblok-nuxt": "^1.2.0",
